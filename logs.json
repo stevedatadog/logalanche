@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2024-09-10T17:30:37Z",
+    "status": "DEBUG",
+    "message": "Default log entry - debugging"
+  },
+  {
+    "timestamp": "2024-09-10T17:43:37Z",
+    "status": "INFO",
+    "message": "Default log entry - information"
+  },
+  {
+    "timestamp": "2024-09-10T18:10:00Z",
+    "status": "WARN",
+    "message": "Default log entry - warning"
+  },
+  {
+    "timestamp": "2024-09-10T18:00:00Z",
+    "status": "ERROR",
+    "message": "Default log entry - error detected"
+  }
+]
+
