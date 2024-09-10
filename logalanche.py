@@ -14,8 +14,7 @@ def load_logs(file_path):
         return []
     except json.JSONDecodeError:
         log_message(f"Error: Failed to parse {file_path}. Make sure it is valid JSON.")
-        sys.exit(1)
-        exit
+        sys.exit(1)  # Exit immediately due to critical error
 
 def post_log(log):
     headers = {
@@ -29,7 +28,6 @@ def post_log(log):
     return response.status_code, response.text
 
 def log_message(message):
-
     # Set the logging mode, default to 'stdout'
     log_mode = os.getenv('LOG_MODE', 'stdout')  # Options: 'stdout', 'none', 'file'
 
@@ -48,8 +46,8 @@ def main():
     logs = load_logs('logs.json')
 
     if not logs:
-        log_message(f"No logs to process. Exiting.")
-        return
+        log_message("No logs to process. Exiting.")
+        sys.exit(0)  # Exit cleanly if there are no logs to process
 
     while True:
         log = random.choice(logs)
