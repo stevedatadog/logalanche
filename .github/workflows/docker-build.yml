@@ -45,7 +45,7 @@ jobs:
       - name: Push Docker image
         run: |
           # Push the built image
-          docker push ghcr.io/${{ github.repository }}/logalanche:${IMAGE_TAG}
+          docker push ghcr.io/${{ github.repository }}:${IMAGE_TAG}
 
       # Optionally push the 'latest' tag for the main branch
       - name: Tag 'latest' for main
