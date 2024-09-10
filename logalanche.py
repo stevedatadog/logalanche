@@ -2,7 +2,7 @@ import json
 import random
 import requests
 import os
-from datetime import datetime
+import time
 
 def load_logs(file_path):
     with open(file_path, 'r') as f:
@@ -28,13 +28,19 @@ def log_message(message, log_mode):
     # If log_mode is 'none', do nothing (no logging)
 
 def main():
+    frequency_seconds =  int(os.getenv('FREQ_SECONDS', 5))
     log_mode = os.getenv('LOG_MODE', 'stdout')  # Options: 'stdout', 'none', 'file'
 
     logs = load_logs('logs.json')
-    log = random.choice(logs)
-    status_code, response_text = post_log(log)
 
-    log_message(f"POST {status_code}: {response_text}", log_mode)
+    while True:
+    
+        log = random.choice(logs)
+        status_code, response_text = post_log(log)
+
+        log_message(f"POST {status_code}: {response_text}", log_mode)
+
+        time.sleep(frequency_seconds)
 
 if __name__ == '__main__':
     main()

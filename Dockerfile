@@ -12,7 +12,9 @@ COPY logs.json .
 
 # Set default environment variables (overridable by user)
 ENV DD_API_KEY=""
-ENV LOG_MODE="stdout"  # logalanche's own logs: 'stdout', 'none', 'file'
+
+# logalanche's own logs: 'stdout', 'none', 'file'
+ENV LOG_MODE="stdout"
 
 # Command to run the Python script
 CMD ["python", "logalanche.py"]
