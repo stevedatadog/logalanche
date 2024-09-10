@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.10-slim
+FROM python:3-slim
 
 RUN pip3 install requests
 

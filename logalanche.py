@@ -32,7 +32,7 @@ def log_message(message):
     log_mode = os.getenv('LOG_MODE', 'stdout')  # Options: 'stdout', 'none', 'file'
 
     if log_mode == "stdout":
-        print(message)
+        print(message, flush=True)
     elif log_mode == "file":
         with open("/app/logalanche.log", "a") as log_file:
             log_file.write(f"{message}\n")

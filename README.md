@@ -8,7 +8,7 @@ REST API.
 ## Features
 
 - Reads logs from a JSON file (can be user-provided or defaults to a built-in
-  file).  
+  file).
 - Sends logs to an external REST API (e.g., Datadog Logs).
 - Configurable logging behavior for logalanche itself (log to STDOUT, disable
   logging, or log to a file).
@@ -32,7 +32,7 @@ docker build -t logalanche:latest .
 
 #### Default Usage
 
-By default, logalanche reads from a built-in logs.json file and sends log
+By default, logalanche reads from a built-in `logs.json` file and sends log
 entries to the Datadog API. To run the container, use:
 
 ```bash
@@ -58,7 +58,7 @@ logalanche supports three logging modes for its own logging:
 
 1. stdout (default): Logs messages to STDOUT.
 2. none: Disables logging.
-3. file: Logs messages to a file inside the container (/app/logalanche.log).
+3. file: Logs messages to a file inside the container (`/app/logalanche.log`).
 
 You can control the logging behavior by setting the LOG_MODE environment
 variable.
@@ -89,7 +89,7 @@ docker run \
   logalanche
 ```
 
-The logs will be written to /app/logalanche.log inside the container. To access
+The logs will be written to `/app/logalanche.log` inside the container. To access
 the log file, you can mount a directory from the host:
 
 ```bash
